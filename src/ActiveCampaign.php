@@ -4,6 +4,7 @@ namespace Label84\ActiveCampaign;
 
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
+use Label84\ActiveCampaign\Resources\ActiveCampaignContactDealsResource;
 use Label84\ActiveCampaign\Resources\ActiveCampaignContactsResource;
 use Label84\ActiveCampaign\Resources\ActiveCampaignDealsResource;
 use Label84\ActiveCampaign\Resources\ActiveCampaignFieldsResource;
@@ -66,5 +67,10 @@ class ActiveCampaign
     public function deals(): ActiveCampaignDealsResource
     {
         return new ActiveCampaignDealsResource($this);
+    }
+
+    public function contactDeals(): ActiveCampaignContactDealsResource
+    {
+        return new ActiveCampaignContactDealsResource($this);
     }
 }
