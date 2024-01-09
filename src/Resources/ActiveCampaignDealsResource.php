@@ -110,14 +110,14 @@ class ActiveCampaignDealsResource extends ActiveCampaignBaseResource
      *
      * @throws ActiveCampaignException
      */
-    public function createNote(string $dealId, string $deals): Collection
+    public function createNote(string $dealId, string $note): Collection
     {
         $deals = $this->request(
             method: 'post',
             path: 'deals/'.$dealId.'/notes',
             data: [
                 'note' => [
-                    'note' => $deals,
+                    'note' => $note,
                 ],
             ],
             responseKey: 'deals'
