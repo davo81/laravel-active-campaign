@@ -36,11 +36,11 @@ class ActiveCampaignTagsResource extends ActiveCampaignBaseResource
      *
      * @throws ActiveCampaignException
      */
-    public function list(?string $name = ''): Collection
+    public function list(?string $name = '', array $params = []): Collection
     {
         $tags = $this->request(
             method: 'get',
-            path: 'tags?search='.$name,
+            path: 'tags?search='.$name . '&' . http_build_query($params),
             responseKey: 'tags'
         );
 
